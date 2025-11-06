@@ -32,7 +32,7 @@
             <li><a href="#" onclick="navTo('apps')" data-page="apps">
                     <i class="lucide" data-lucide="layout-grid"></i>
                 </a></li>
-            <li><a href="#" onclick="navTo('search')" data-page="search">
+            <li><a href="#" onclick="navTo('ultraviolet')" data-page="search">
                     <i class="lucide" data-lucide="globe" style="margin-right: 6px;"></i>
                     Search
                 </a></li>
@@ -53,8 +53,8 @@
                 </a></li>
         </ul>
     </nav>
-
     <div id="homeContent">
+        <img src="/assets/fav.png" class="ml-[50%] translate-x-[-50%] justify-center" style="filter: drop-shadow(0 0 40px rgba(171, 190, 199, 0.527));" alt="">
         <h1 class="text-8xl text-slate-700 font-black">breeze.</h1>
         <p class="text-xl font-medium text-slate-600">
             if links or searching dont work, do ctrl + shift + r a few times
@@ -131,7 +131,7 @@
 
             homeContent.classList.add('hidden');
             contentFrame.classList.add('active');
-            contentFrame.src = "/pages/search.html?i=" + url;
+            contentFrame.src = "/pages/ultraviolet.html?i=" + url;
             location.href = "#?i=" + url
         }
 
@@ -178,8 +178,8 @@
                     newToastIcon.classList.add("fa-circle-exclamation")
                     newToastMsg.textContent = msg
                 case "log":
-                    newToastIcon.classList.add("fa-wrench")
-                    newToastMsg.textContent = "[LOG] " + msg
+                    newToastIcon.classList.add("fa-memo-circle-info")
+                    newToastMsg.textContent = msg
             }
 
             setTimeout(() => {
