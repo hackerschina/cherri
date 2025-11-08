@@ -13,14 +13,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
-        <script>
-            // use specifically a SCRAMJET sw so that it works lol
-            if ("serviceWorker" in navigator) {
-                window.addEventListener("load", () => {
-                    navigator.serviceWorker.register("/sw.js")
-                })
-            }
-        </script>
 </head>
 
 <body>
@@ -310,7 +302,14 @@
     </div>
 
     <iframe src="" frameborder="0" id="iframe"></iframe>
-
+    <script>
+    // use specifically a SCRAMJET sw so that it works lol
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+            navigator.serviceWorker.register("/sw.js")
+        })
+    }
+    </script>
     <script>
         // redirect based on backend choice
         window.onload = () => {
