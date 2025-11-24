@@ -7,6 +7,16 @@ html {
     color: var(--text);
 }
 
+.grid {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to right, #80808012 1px, transparent 1px),
+        linear-gradient(to bottom, #80808012 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
 ::selection {
     background: var(--accent);
     color: var(--bright-text);
@@ -66,7 +76,18 @@ ul  {
 }
 
 ul.collapsed {
-    width: 60px;
+    width: 40px;
+}
+
+ul.collapsed li a {
+    width: 14px;
+    margin-left: 0;
+    padding-left: 9px;
+}
+
+li {
+    text-wrap: nowrap;
+    overflow: hidden;
 }
 
 li a {
@@ -99,6 +120,14 @@ li a .ri {
     margin-right: 8px;
 }
 
+#cBtn {
+    transition: 0.3s;
+}
+
+#cBtn.rotate {
+    transform: rotate(180deg);
+}
+
 #pageframe {
     position: fixed;
     top: 50%;
@@ -109,6 +138,7 @@ li a .ri {
     border-radius: 15px;
     border: 1px solid var(--border-3);
     background: var(--bg-2);
+    transition: 0.3s;
 }
 
 input {
@@ -118,12 +148,15 @@ input {
     padding: 10px;
     color: white;
     transition: 0.2s;
-    width: 200px;
+    width: 400px;
+    height: 30px;
+    font-size: 17px;
 }
 
 input:focus {
     outline: none;
     border: 1px solid var(--accent);
+    width: 420px;
 }
 
 input::placeholder {
@@ -132,7 +165,7 @@ input::placeholder {
 
 .custom-select {
     position: relative;
-    font-family: inter;
+    font-family: geist;
     z-index: 999;
 }
 
@@ -189,4 +222,60 @@ input::placeholder {
 .select-items div:hover,
 .same-as-selected {
     background-color: rgba(0, 0, 0, 0.1);
+}
+
+.whatsnew {
+    background: var(--bg-2);
+    z-index: 999999;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.9);
+    height: min-content;
+    padding: 15px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 15px;
+    border: 1px solid var(--border-4);
+    width: 300px;
+    transition: 0.2s;
+    transform-origin: center center !important;
+}
+
+.wtitle {
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.whatsnew li::before {
+    content: "⨠ ";
+}
+
+.whatsnew button {
+    background: var(--bg-3);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid var(--border-4);
+    font-size: 17px;
+    position: absolute;
+    right: 5px;
+    transition: 0.2s;
+}
+
+.whatsnew button:hover {
+    background: var(--bg-4);
+    cursor: pointer;
+}
+
+.bluroverlay {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(3px) brightness(0.8);
 }

@@ -34,7 +34,7 @@
     }
 
     * {
-        font-family: Inter;
+        font-family: geist;
     }
 
     button {
@@ -64,7 +64,7 @@
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        font-family: inter;
+        font-family: geist;
     }
 
     ::-webkit-scrollbar {
@@ -101,8 +101,8 @@
 </style>
 
 <body class="text-white min-h-screen p-8" x-data="app()">
-    <div class="top-glow"></div>
-    <div class="bottom-glow"></div>
+    
+    
     <div id="particles-container"></div>
     <div class="container mx-auto">
         <h1 class="text-center text-4xl z-34 font-bold" style="z-index: 34 !important;">Movies and TV</h1>
@@ -146,8 +146,8 @@
                 class="bg-[var(--bg-5)] px-6 py-2 z-34 rounded-2xl disabled:opacity-50">
                 Previous
             </button>
-            <span class="px-6 py-2" style="font-family: inter;">Page <span x-text="currentPage"
-                    style="font-family: inter;"></span></span>
+            <span class="px-6 py-2" style="font-family: geist;">Page <span x-text="currentPage"
+                    style="font-family: geist;"></span></span>
             <button @click="changePage(currentPage + 1)" class="rounded-2xl bg-[var(--bg-5)] z-34 px-6 py-2 rounded">
                 Next
             </button>

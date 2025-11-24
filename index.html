@@ -15,7 +15,9 @@
     <script src="/assets/js/cursor.js"></script>
 </head>
 
-<body style="background: var(--bg-5);">
+<body style="background: var(--bg-5);" onload="showWN()">
+
+    <div class="grid"></div>
 
     <nav>
         <ul id="nav-ul" class="">
@@ -73,19 +75,29 @@
                 <li>
                     <a href="javascript:window.open('https://github.com/x8rr/cherri', '_blank')">
                         <i class="ri ri-github-fill"></i>
-                        Source
+                        v0.0.1 Beta 2
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:window.open('https://github.com/x8rr/cherri', '_blank')">
-                        <img src="/assets/img/fav.svg" height="24" width="24" style="margin-right: 8px; vertical-align: -6px; filter: brightness(0) invert(1);" alt="">
-
-                        cherri <small>v0.0.1 beta 1</small>
+                    <a href="javascript:collapseNav()">
+                        <i class="ri ri-arrow-left-s-line" style="display: inline-block;" id="cBtn"></i>
+                        Collapse
                     </a>
                 </li>
             </div>
         </ul>
     </nav>
+
+    <div class="whatsnew" data-modal-id="2">
+        <h2 class="wtitle">v0.0.1 Beta 2</h2>
+        <li>Changed how apps and games load</li>
+        <li>Added collapsing nav</li>
+        <li>Increased searchbar size</li>
+        <li>Fixed some visual bugs</li>
+        <li>Added this popup!</li>
+
+        <button onclick="closeWN()">Nice!</button>
+    </div>
 
     <iframe src="/pages/home.html" frameborder="0" id="pageframe"></iframe>
 
@@ -99,6 +111,58 @@
 
         function nav(page) {
             document.getElementById("pageframe").src = "/pages/" + page + ".html";
+        }
+
+        const ul = document.getElementById("nav-ul")
+        const frame = document.getElementById("pageframe")
+        const collapseBtn = document.getElementById("cBtn")
+        if (ul.classList.contains("collapsed")) {
+            frame.style.width = "91.5%"
+            frame.style.left = "90px"
+            console.log("hi")
+        } else {
+            frame.style.width = "calc(100% - 270px)"
+            frame.style.left = "250px"
+            console.log("bye")
+        }
+
+        function collapseNav() {
+            if (ul.classList.contains("collapsed")) {
+                ul.classList.remove("collapsed")
+                frame.style.width = "calc(100% - 270px)"
+                frame.style.left = "250px"
+                collapseBtn.classList.remove("rotate")
+
+            } else {
+                ul.classList.add("collapsed")
+                frame.style.width = "calc(100% - 110px)"
+                frame.style.left = "90px"
+                collapseBtn.classList.add("rotate")
+            }
+        }
+
+        const wn = document.querySelector(".whatsnew")
+        const wnid = wn.dataset.modalId
+
+        function closeWN() {
+            wn.style.opacity = "0"
+            wn.style.transform = "translate(-50%, -50%) scale(.9)"
+            wn.style.pointerEvents = "none"
+            const overlay = document.querySelector(".bluroverlay")
+            overlay.remove()
+
+            localStorage.setItem("cherri_wnid", wnid)
+        }
+
+        function showWN() {
+            if (localStorage.getItem("cherri_wnid") !== wnid) {
+                wn.style.opacity = "1"
+                wn.style.transform = "translate(-50%, -50%) scale(1)"
+                wn.style.pointerEvents = "all"
+                const overlay = document.createElement("div")
+                overlay.classList.add("bluroverlay")
+                document.body.append(overlay)
+            }
         }
     </script>
 </body>

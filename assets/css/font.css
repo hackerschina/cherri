@@ -4,10 +4,15 @@
 }
 
 @font-face {
-    font-family: inter;
+    font-family: Geist;
     src: url("/assets/fonts/inter.ttf");
 }
 
+@font-face {
+    font-family: geist;
+    src: url("/assets/fonts/geist.ttf");
+}
+
 * {
-    font-family: inter, sans-serif;
+    font-family: geist, sans-serif;
 }
