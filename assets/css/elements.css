@@ -249,8 +249,16 @@ input::placeholder {
     margin-top: 0;
 }
 
+.whatsnew li {
+    margin-bottom: 10px;
+}
+
 .whatsnew li::before {
-    content: "⨠ ";
+    content: "| ";
+    font-size: 25px;
+    line-height: 0;
+    font-weight: bold;
+    color: var(--bg-4);
 }
 
 .whatsnew button {
