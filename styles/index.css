@@ -602,7 +602,7 @@ p a:hover {
 }
 
 .app:hover .bg-img {
-    filter: brightness(0.5);
+    filter: brightness(0.5) blur(3px);
 }
 
 .app:hover {
