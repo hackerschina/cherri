@@ -57,6 +57,11 @@
     font-weight: 700;
 }
 
+@font-face {
+    font-family: funnel sans;
+    src: url(/assets/fonts/funnel.ttf);
+}
+
 * {
-    font-family: gg sans, sans-serif;
+    font-family: funnel sans, sans-serif;
 }
