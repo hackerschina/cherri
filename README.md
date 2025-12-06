@@ -21,7 +21,7 @@
 
 ## Deployment
 
-Cherri is deployable to remotely any hosting service, and even locally.
+Cherri is deployable to remotely any hosting service, and even locally deployable.
 
 Follow the steps below to deploy.
 
