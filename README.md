@@ -1,29 +1,32 @@
-<h1 align="center">cherri</h1>
+<h1 align="center">Cherri</h1>
+
 <p align="center">
-  <img alt="image" src="https://github.com/user-attachments/assets/314409be-199f-4d7d-acc8-5feb3b61dad8" />
+  <img alt="image" src="https://github.com/user-attachments/assets/d0532d69-892b-4b08-ae29-f2191295fbf7" />
 </p>
+
 <p align="center">
-  an indev ubg project made to be clean and easy to use. with over 500 games from 2 different stores, 40 apps, a blazing fast browser, extensive customization, and more, this is easily one of the best websites for school.
+  A UBG project built to be clean, simple, and easy to use. With over 700 games sourced from two different stores, 40 apps, a fast and powerful browser, extensive customization options, and much more, this is easily one of the best school-gaming websites available.
 </p>
 
 <hr>
 
-## roadmap and things i wanna add
-- [x] games
-- [x] apps
-- [x] proxy
-- [x] movies
-- [ ] chatroom
-- [x] game overlay 
+## Roadmap
 
-## deployment
-you can deploy this site to basically any deployment site ever because it's written in plain html and stuff so you can also deploy it locally!!1!!1
+* [x] Games
+* [x] Apps
+* [x] Proxy
+* [x] Movies
+* [ ] Chatroom
+* [x] Game overlay
 
-anyway
+## Deployment
 
-now for deployment
+Cherri is deployable to remotely any hosting service, and even locally.
 
-#### method 1: using the deploy buttons
+Follow the steps below to deploy.
+
+### Method 1: Deploy Buttons
+
 [![Deploy to Heroku](https://binbashbanana.github.io/deploy-buttons/buttons/remade/heroku.svg)](https://heroku.com/deploy/?template=https://github.com/x8rr/cherri)
 [![Run on Replit](https://binbashbanana.github.io/deploy-buttons/buttons/remade/replit.svg)](https://replit.com/github/x8rr/cherri)
 [![Remix on Glitch](https://binbashbanana.github.io/deploy-buttons/buttons/remade/glitch.svg)](https://glitch.com/edit/#!/import/github/x8rr/cherri)
@@ -38,75 +41,80 @@ now for deployment
 [![Deploy to Cyclic](https://binbashbanana.github.io/deploy-buttons/buttons/remade/cyclic.svg)](https://app.cyclic.sh/api/app/deploy/x8rr/cherri)
 
 > [!IMPORTANT]
-> to deploy to cloudflare pages, see [this alternate repo](https://github.com/x8rr/cherri-cloudflare) for a deployable version. this repo does not include classplay store files, as they don't fit in cloudflare's 25 mb limit.
+> To deploy on Cloudflare Pages, use [this repository.](https://github.com/x8rr/cherri-cloudflare)
+> This version excludes Classplay store files due to Cloudflare’s 25 MB limit.
 
-#### method 2: deploying locally
+### Method 2: Deploying Locally
 
-to get started, run the following command:
+Clone the repository:
 
 ```sh
 git clone https://github.com/x8rr/cherri.git
 ```
 
-now cd into the directory or just open it up
+Enter the directory:
 
 ```sh
 cd cherri
 ```
 
-and finally start up a nice cool server
+Run a local development server:
 
 ```sh
-python3 -m http.server # cool python http server
-netlify dev # to emulate a netlify prod environment
+python3 -m http.server        # simple Python HTTP server
+netlify dev                   # emulate a Netlify production environment
 ```
 
-#### method 3: deploying to firebase
+### Method 3: Deploying to Firebase
 
-if you wanna deploy to firebase, make sure you have an account and a project you wanna use
+Ensure you have a Firebase account and a project ready.
 
-to start, install firebase cli if you don't have it already
+Install the Firebase CLI:
 
 ```sh
 npm i -g firebase-tools
 ```
 
-now initialize a pages project
+Initialize a hosting project:
 
 ```sh
 firebase init hosting
 ```
 
-follow the steps in the cli and deploy!
+Follow the CLI steps, then deploy.
 
-## if you fork...
-please star the project :P
+---
 
-also make sure you dont do the following:
-- modify the agpl license
-- claim this code as yours
-- not give adequate credits
-- use this in your website without credits
-- detatch from fork network without giving credits
-- do anything that violates the license
-- literally just steal this and run away with it
+## If You Fork This Project
 
-but you can:
-- deploy it without any changes made
-- deploy it WITH changes (as long as credit is included and changes are included)
-- some more other stuff that i cant remember
+Please consider starring the repository.
 
-i recommend including this to stay safe:
+You must **not**:
+
+* Modify the AGPL license
+* Claim this code as your own
+* Fail to provide proper credit
+* Use this code in your website without attribution
+* Detach from the fork network without giving credit
+* Violate the license in any way
+* Steal the code or redistribute it without acknowledgment
+
+You *may*:
+
+* Deploy it without any modifications
+* Deploy it with modifications (as long as credit and a changelog are included)
+* Perform other allowed actions as defined by the license
+
+To remain compliant, it is recommended that you include a notice like this:
 
 ---
 
 ## FORK NOTICE
-This repository was derived from [x8rr/cherri](https://github.com/x8rr/cherri), and all code was written by him (x8rr). The following changes have been made to this fork:
 
-- change 1
-- change 2
-- change 3
+This repository was derived from [x8rr/cherri](https://github.com/x8rr/cherri). All original code was written by the project owner (x8rr). The following changes have been made to this fork:
+
+* Change 1
+* Change 2
+* Change 3
 
 ---
-
-**to the skids:** i can scan for violating forks using a discord bot me and my buddies have. watch out.
