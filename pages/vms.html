@@ -20,7 +20,7 @@
 <body>
     <style>
         html {
-            background: var(--bg-5);
+            background: none;
         }
 
         #particles-container {
@@ -57,7 +57,11 @@
         }
 
         button {
-            background: var(--bg-2);
+            backdrop-filter: blur(10px);
+    background: color-mix(in srgb, var(--bg-2) 30%, transparent 70%);
+    border: 2px solid transparent;
+    box-shadow: 0 0 0 .5px rgba(255, 255, 255, 0.15),
+        0 16px 32px rgba(0, 0, 0, 0.12);
             color: white;
             padding: 10px 20px;
             border: none;
@@ -109,8 +113,6 @@
         }
     </style>
 
-    <div id="particles-container"></div>
-
     <center>
         <br><br><br><br>
         <button disabled id="create-btn">New VM</button>
@@ -129,9 +131,6 @@
     </script>
 
     <script src="/assets/js/vm.js" defer></script>
-    <script defer>
-        alert("VMs are still in beta! Report bugs on the repo or in the Discord.")
-    </script>
 </body>
 
 </html>

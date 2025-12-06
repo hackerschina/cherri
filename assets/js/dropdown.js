@@ -3,7 +3,7 @@ const appSettings = {
   backend: localStorage.getItem("cherri_backend") || "Scramjet",
   searchEngine: localStorage.getItem("cherri_searchEngine") || "DuckDuckGo",
   decoy: localStorage.getItem("decoy") || "None",
-  wisp: localStorage.getItem("cherri_wispUrl") || "wss://wisp.rhw.one/",
+  wisp: localStorage.getItem("cherri_wispUrlSelected") || "rhw",
   theme: localStorage.getItem("cherri_theme") || "default",
   store: localStorage.getItem("cherri_gameStore") || "Classplay"
 };
@@ -106,11 +106,81 @@ const allDecoyOptions = [
   "Schoology",
 ];
 
+const wispPresets = {
+  rhw: { url: "wss://wisp.rhw.one/" },
+
+  "Alu 1": { url: "wss://aluu.xyz/wisp/" },
+  "Alu 2": { url: "wss://freemathhw.xyz/wisp/" },
+  "Alu 3": { url: "wss://canvaslogin.org/wisp/" },
+  "Alu 4": { url: "wss://tnlnda.xyz/wisp/" },
+
+  "Incognito 1": { url: "wss://incog.works/wisp/" },
+  "Incognito 2": { url: "wss://math.mathpuns.lol/wisp/" },
+  "Incognito 3": { url: "wss://math.americahistory.online/wisp/" },
+  "Incognito 4": { url: "wss://english.geniuslecture.club/wisp/" },
+
+  "Definitely Science 1": { url: "wss://definitelyscience.com/wisp/" },
+  "Definitely Science 2": { url: "wss://onlinegames.ro/wisp/" },
+  "Definitely Science 3": { url: "wss://mages.io/wisp/" },
+  "Definitely Science 4": { url: "wss://lichology.com/wisp/" },
+
+  "Anura 1": { url: "wss://anura.pro/" },
+  "Anura 2": { url: "wss://adoptmy.baby/" },
+  "Anura 3": { url: "wss://wallstjournal.click/" },
+  "Anura 4": { url: "wss://mexicoon.top/" },
+  "Anura 5": { url: "wss://onlineosdev.nl/" },
+  "Anura 6": { url: "wss://swordartii.online/" },
+
+  Phantom: { url: "wss://phantom.lol/wisp/" },
+  Mercury: { url: "wss://wisp.mercurywork.shop/" },
+
+  "Terbium 1": { url: "wss://quantumchemistry.club/wisp/" },
+  "Terbium 2": { url: "wss://wisp.terbiumon.top/wisp/" },
+  "Terbium 3": { url: "wss://explorechemistry.online/wisp/" },
+  "Terbium 4": { url: "wss://webmath.help/wisp/" },
+
+  "Radius 1": { url: "wss://radiusproxy.app/wisp/" },
+  "Radius 1 (Adblock)": { url: "wss://radiusproxy.app/adblock/" },
+  "Radius 2": { url: "wss://radiusowski.site/wisp/" },
+  "Radius 2 (Adblock)": { url: "wss://radiusowski.site/adblock/" },
+};
+
 const allWispOptions = [
-  "wss://terbiumon.top/wisp/",
-  "wss://webmath.help/wisp/",
-  "wss://wisp.rhw.one/",
-  "wss://anura.pro/wisp/",
+  "rhw",
+  "Alu 1",
+  "Alu 2",
+  "Alu 3",
+  "Alu 4",
+
+  "Incognito 1",
+  "Incognito 2",
+  "Incognito 3",
+  "Incognito 4",
+
+  "Definitely Science 1",
+  "Definitely Science 2",
+  "Definitely Science 3",
+  "Definitely Science 4",
+
+  "Anura 1",
+  "Anura 2",
+  "Anura 3",
+  "Anura 4",
+  "Anura 5",
+  "Anura 6",
+
+  "Phantom",
+  "Mercury",
+
+  "Terbium 1",
+  "Terbium 2",
+  "Terbium 3",
+  "Terbium 4",
+
+  "Radius 1",
+  "Radius 1 (Adblock)",
+  "Radius 2",
+  "Radius 2 (Adblock)",
 ];
 
 const allThemeOptions = [
@@ -238,7 +308,7 @@ createSelector(
   wispOptions,
   allWispOptions,
   appSettings.wisp,
-  "cherri_wispUrl",
+  "cherri_wispUrlSelected",
   "wispUpdated",
   "Successfully updated Wisp server!"
 );
@@ -262,7 +332,7 @@ createSelector(
   appSettings.theme,
   "cherri_theme",
   "themeUpdated",
-  "Successfully updated theme!"
+  "Successfully updated theme! Refresh to see background change."
 );
 
 createSelector(
@@ -287,6 +357,12 @@ document.addEventListener("themeUpdated", e => {
     link.href = "/assets/css/colors.css";
   }
 })
+document.addEventListener("wispUpdated", (e) => {
+  const wisp = wispPresets[e.detail]
+
+  localStorage.setItem("cherri_wispUrl", wisp.url)
+  console.log(wisp.url)
+});
 window.addEventListener("load", () => {
   applyDecoy(localStorage.getItem("decoy"));
   console.log("Cloaked as " + localStorage.getItem("decoy"))
