@@ -285,17 +285,6 @@ createSelector(
 );
 
 createSelector(
-  "wisp",
-  wispSelected,
-  wispOptions,
-  allWispOptions,
-  appSettings.wisp,
-  "cherri_wispUrlSelected",
-  "wispUpdated",
-  "Successfully updated Wisp server!"
-);
-
-createSelector(
   "backend",
   backendSelected,
   backendOptions,
