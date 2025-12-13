@@ -153,15 +153,11 @@ const allDecoyOptions = [
 
 const wispPresets = {
   rhw: { url: "wss://wisp.rhw.one/" },
-  "Terbium": { url: "wss://webmath.help/wisp/" },
-  "Space": { url: "wss://gointospace.app/wisp" }
   
 };
 
 const allWispOptions = [
   "rhw",
-  "Terbium",
-  "Space"
 ];
 
 const allThemeOptions = [
