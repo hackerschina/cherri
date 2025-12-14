@@ -20,10 +20,6 @@ const decoySelector = document.querySelector(".decoy-selector");
 const decoySelected = decoySelector.querySelector(".decoy-selected");
 const decoyOptions = decoySelector.querySelector(".decoy-options");
 
-const wispSelector = document.querySelector(".wisp-selector");
-const wispSelected = wispSelector.querySelector(".wisp-selected");
-const wispOptions = wispSelector.querySelector(".wisp-options");
-
 const backendSelector = document.querySelector(".backend-selector");
 const backendSelected = backendSelector.querySelector(".backend-selected");
 const backendOptions = backendSelector.querySelector(".backend-options");
